@@ -1,5 +1,5 @@
 import { useTheme } from '@src/hooks';
-import { makeStyles } from '@src/theme';
+import { makeStyles } from '@src/theme/theme.utils';
 import React from 'react';
 import {
   GestureResponderEvent,

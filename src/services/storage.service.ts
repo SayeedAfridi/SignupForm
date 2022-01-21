@@ -24,9 +24,9 @@ class _StorageService {
       if (mode) {
         return mode as ThemeModeString;
       }
-      return 'light';
+      return 'dark';
     } catch (error) {
-      return 'light';
+      return 'dark';
     }
   }
 

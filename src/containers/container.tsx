@@ -1,4 +1,4 @@
-import { makeStyles } from '@src/theme';
+import { makeStyles } from '@src/theme/theme.utils';
 import React from 'react';
 import { SafeAreaView, View, ViewProps } from 'react-native';
 

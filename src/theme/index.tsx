@@ -44,13 +44,4 @@ export const darkTheme: Theme = {
   },
 };
 
-type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
-
-export const makeStyles =
-  <T extends NamedStyles<T>>(styles: (theme: Theme) => T) =>
-  () => {
-    const currentTheme = useTheme();
-    return styles(currentTheme);
-  };
-
 export default theme;

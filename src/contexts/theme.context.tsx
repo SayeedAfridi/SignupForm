@@ -10,7 +10,7 @@ export const ThemeContext = React.createContext<ThemeContextInterface>(
 );
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [themeMode, setThemeMode] = React.useState<ThemeModeString>('light');
+  const [themeMode, setThemeMode] = React.useState<ThemeModeString>('dark');
   const [currentTheme, setCurrentTheme] = React.useState<Theme>(darkTheme);
 
   //get persists theme mode on mount

@@ -1,6 +1,7 @@
 import { makeStyles } from '@src/theme/theme.utils';
 import React from 'react';
-import { SafeAreaView, View, ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export interface ContainerProps extends ViewProps {
   children: React.ReactNode | React.ReactNode[];

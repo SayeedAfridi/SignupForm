@@ -1,3 +1,4 @@
+import { HEIGHT } from '@src/constants/number.constants';
 import { useTheme } from '@src/hooks';
 import { makeStyles } from '@src/theme/theme.utils';
 import React from 'react';
@@ -19,11 +20,12 @@ export interface ButtonProps extends PressableProps {
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    paddingVertical: theme.spacing.s + 4,
     paddingHorizontal: theme.spacing.l + 4,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: theme.borderRadii.xl,
+    margin: theme.spacing.s,
+    height: HEIGHT,
   },
 }));
 

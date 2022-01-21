@@ -14,6 +14,7 @@ const theme = {
     grey: palette.grey,
     white: palette.white,
     transparent: 'transparent',
+    danger: palette.red,
   },
   spacing: {
     s: Math.round(hp(1)),

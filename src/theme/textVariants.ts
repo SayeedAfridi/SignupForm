@@ -14,9 +14,17 @@ const textVariants = {
     fontSize: fp(2),
     color: 'text',
   },
-  appbar: {
-    fontSize: fp(2),
-    color: 'white',
+  inputLabel: {
+    fontSize: fp(1.9),
+    color: 'text',
+  },
+  error: {
+    fontSize: fp(1.7),
+    color: 'danger',
+  },
+  tiny: {
+    fontSize: fp(1.4),
+    color: 'text',
   },
 };
 

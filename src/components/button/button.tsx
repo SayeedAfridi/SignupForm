@@ -1,12 +1,14 @@
 import { HEIGHT } from '@src/constants/number.constants';
 import { useTheme } from '@src/hooks';
 import { makeStyles } from '@src/theme/theme.utils';
+import { hp } from '@src/utils';
 import React from 'react';
 import {
-  GestureResponderEvent,
+  ActivityIndicator,
   Pressable,
   PressableProps,
   StyleProp,
+  View,
   ViewStyle,
 } from 'react-native';
 import Text from '../Text';
@@ -16,6 +18,8 @@ export interface ButtonProps extends PressableProps {
   style?: StyleProp<ViewStyle>;
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'default';
+  onPress?: () => void;
+  loading?: boolean;
 }
 
 const useStyle = makeStyles((theme) => ({
@@ -26,6 +30,7 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: theme.borderRadii.xl,
     margin: theme.spacing.s,
     height: HEIGHT,
+    flexDirection: 'row',
   },
 }));
 
@@ -35,19 +40,11 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   onPress,
   variant,
+  loading,
   ...rest
 }) => {
   const styles = useStyle();
   const theme = useTheme();
-
-  const handlePress = (e: GestureResponderEvent) => {
-    if (disabled) {
-      return;
-    }
-    if (onPress) {
-      onPress(e);
-    }
-  };
 
   const opacity = disabled ? 0.8 : 1;
   const backgroundColor =
@@ -62,6 +59,13 @@ const Button: React.FC<ButtonProps> = ({
       : variant === 'secondary'
       ? theme.colors.white
       : theme.colors.black;
+
+  const handlePress = () => {
+    if (!loading) {
+      onPress?.();
+    }
+  };
+
   return (
     <Pressable
       style={[styles.root, style, { opacity, backgroundColor }]}
@@ -71,6 +75,16 @@ const Button: React.FC<ButtonProps> = ({
       <Text variant='button' style={{ color }}>
         {title}
       </Text>
+      {loading ? (
+        <View
+          style={{
+            position: 'absolute',
+            left: hp(3),
+          }}
+        >
+          <ActivityIndicator color={color} />
+        </View>
+      ) : null}
     </Pressable>
   );
 };

@@ -88,6 +88,7 @@ const TextInput = React.forwardRef<TextInputRef, TextInputProps>(
               flex: 1,
               color: theme.colors.text,
             }}
+            selectionColor={theme.colors.primary}
             secureTextEntry={password && !view}
             placeholderTextColor={theme.colors.grey}
             {...props}

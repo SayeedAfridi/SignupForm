@@ -23,3 +23,8 @@ export interface ThemeContextInterface {
   toggleDarkMode: () => Promise<void>;
   currentThemeMode: ThemeModeString;
 }
+
+export type User = {
+  identifier: string;
+  password: string;
+};

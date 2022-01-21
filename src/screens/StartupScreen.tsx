@@ -1,4 +1,5 @@
 import { Text } from '@src/components';
+import { Container } from '@src/containers';
 import { useTheme } from '@src/hooks';
 import useInteractionManagerMount from '@src/hooks/useInteractionManagerMount';
 import { AppNavigationProps, AppRoutes } from '@src/navigator/navigator.types';
@@ -23,18 +24,19 @@ const SignupScreen: React.FC<AppNavigationProps<'Startup'>> = ({
     }, 500);
   });
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: theme.colors.background,
-      }}
-    >
-      <Text>Please Wait...</Text>
-      <View style={{ height: 16 }} />
-      <ActivityIndicator color={theme.colors.text} size='large' />
-    </View>
+    <Container>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Text>Please Wait...</Text>
+        <View style={{ height: 16 }} />
+        <ActivityIndicator color={theme.colors.text} size='large' />
+      </View>
+    </Container>
   );
 };
 

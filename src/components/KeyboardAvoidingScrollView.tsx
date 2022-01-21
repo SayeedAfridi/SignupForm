@@ -19,7 +19,7 @@ const KeyboardAvoidingScrollView: React.FC<KeyboardAvoidingScrollViewProps> = ({
   return (
     <KeyboardAvoidingView
       behavior={isIOS ? 'padding' : 'height'}
-      style={{ flex: 1, backgroundColor: theme.colors.background }}
+      style={{ flex: 1 }}
     >
       <ScrollView
         showsVerticalScrollIndicator={false}
